@@ -1,0 +1,34 @@
+name: Feature request
+description: Suggest an improvement for Reelhouse
+title: "[Feature]: "
+body:
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Which application should this improvement affect?
+      options:
+        - Windows Desktop
+        - Android TV
+        - Both platforms
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the limitation or workflow you want to improve.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement
+      description: Describe what you would like Reelhouse to do.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Mention any workarounds or alternative approaches you have considered.

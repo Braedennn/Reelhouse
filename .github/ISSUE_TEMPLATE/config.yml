@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Downloads and release notes
+    url: https://github.com/Braedennn/Reelhouse/releases
+    about: Get the latest Reelhouse packages, installation notes, and checksums.
+  - name: Privacy Policy
+    url: https://github.com/Braedennn/Reelhouse/blob/main/PRIVACY.md
+    about: Review local storage, deletion controls, and third-party network requests.

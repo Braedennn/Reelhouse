@@ -1,0 +1,61 @@
+name: Bug report
+description: Report a reproducible problem with Reelhouse for Windows Desktop or Android TV
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Reelhouse. Please do not include credentials, signed media URLs, access tokens, provider secrets, or personal data.
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Which Reelhouse application is affected?
+      options:
+        - Windows Desktop
+        - Android TV
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Reelhouse version
+      description: For example, 1.0.0.
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the problem and where it occurs in the app.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: List the smallest set of steps that reliably triggers the issue.
+      placeholder: |
+        1. Open Reelhouse.
+        2. Open a title.
+        3. Select Play.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect Reelhouse to do?
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Device and operating system
+      description: Include Windows version or Android TV device model and OS version where available.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots or diagnostics
+      description: Attach representative screenshots or redacted logs if useful. Remove all tokens, credentials, signed URLs, private paths, and personal data.
