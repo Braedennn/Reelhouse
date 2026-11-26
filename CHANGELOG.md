@@ -2,6 +2,36 @@
 
 Notable Reelhouse releases and changes are documented here. Download packages and SHA-256 checksums are available from [GitHub Releases](https://github.com/Braedennn/Reelhouse/releases).
 
+## [1.1.0] — November 26, 2026
+
+This release improves stream selection and Android TV playback reliability on **Windows Desktop** and **Android TV**.
+
+### Added
+
+- StreamPlay's Vidlink source as a native fallback with quality variants and captions
+- Automatic English audio preference when an Android TV track declares its language
+- Measured playback and remote-control regression coverage
+
+### Improved
+
+- Auto source selection favors adaptive HLS and efficient progressive files over unnecessarily large remuxes
+- Android TV uses a larger playback buffer while retaining explicit quality choices
+- PlavioHD source handling preserves adaptive streams, source-specific headers, subtitles, and quality metadata
+- Windows resolves PlavioHD, StreamPlay · Vidlink, and Internet Archive through the existing native provider interface
+
+### Fixed
+
+- Android TV D-pad left/right seeks exactly 10 seconds on the video surface and focused progress bar
+- Late adaptive English streams are no longer discarded in favor of earlier high-resolution progressive files
+- Provider failures are isolated so one unavailable source does not prevent fallback playback
+
+### Distribution
+
+- Windows Desktop x64 installer
+- Non-debuggable Android TV APK for direct installation, signed with the development certificate
+- Android package version 1.1.0 (versionCode 2)
+- The former Windows TV prototype is not included in this release
+
 ## [1.0.0] — November 23, 2026
 
 The first public Reelhouse release for **Windows Desktop** and **Android TV**.
@@ -31,4 +61,5 @@ The first public Reelhouse release for **Windows Desktop** and **Android TV**.
 - Android TV debug-signed APK for direct installation
 - The former Windows TV prototype is not included in this release
 
+[1.1.0]: https://github.com/Braedennn/Reelhouse/releases/tag/v1.1.0
 [1.0.0]: https://github.com/Braedennn/Reelhouse/releases/tag/v1.0.0

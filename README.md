@@ -12,7 +12,7 @@
   [![Android TV](https://img.shields.io/badge/ANDROID%20TV-APK-17191d)](https://github.com/Braedennn/Reelhouse/releases/latest)
   [![Downloads](https://img.shields.io/github/downloads/Braedennn/Reelhouse/total?color=d6a629&label=DOWNLOADS)](https://github.com/Braedennn/Reelhouse/releases)
 
-  **[Download Reelhouse](https://github.com/Braedennn/Reelhouse/releases/latest)** · **[What’s new](#whats-new-in-100)** · **[Installation](#installation)** · **[Controls](#controls)**
+  **[Download Reelhouse](https://github.com/Braedennn/Reelhouse/releases/latest)** · **[What’s new](#whats-new-in-110)** · **[Installation](#installation)** · **[Controls](#controls)**
 
   <img src=".github/assets/reelhouse-desktop.png" alt="Reelhouse for Windows showing a cinematic series details page" />
 </div>
@@ -46,12 +46,12 @@ Reelhouse brings catalog discovery, playback, and personal watch history into on
 
 ## Download
 
-Get the latest builds from **[Reelhouse 1.0.0](https://github.com/Braedennn/Reelhouse/releases/tag/v1.0.0)**.
+Get the latest builds from **[Reelhouse 1.1.0](https://github.com/Braedennn/Reelhouse/releases/tag/v1.1.0)**.
 
 | Platform | Download | Package | Notes |
 | --- | --- | --- | --- |
-| **Windows Desktop** | **[Download for Windows x64](https://github.com/Braedennn/Reelhouse/releases/download/v1.0.0/Reelhouse.Setup.exe)** | `Reelhouse.Setup.exe` | Desktop installer |
-| **Android TV** | **[Download for Android TV](https://github.com/Braedennn/Reelhouse/releases/download/v1.0.0/reelhouse-tv-debug.apk)** | `reelhouse-tv-debug.apk` | Sideload-ready, debug-signed APK |
+| **Windows Desktop** | **[Download for Windows x64](https://github.com/Braedennn/Reelhouse/releases/download/v1.1.0/Reelhouse.Setup.exe)** | `Reelhouse.Setup.exe` | Desktop installer |
+| **Android TV** | **[Download for Android TV](https://github.com/Braedennn/Reelhouse/releases/download/v1.1.0/reelhouse-tv.apk)** | `reelhouse-tv.apk` | Non-debuggable, development-signed APK |
 
 > **Windows TV:** The former Windows TV prototype is not distributed or supported. The TV release is for **Android TV**.
 
@@ -63,11 +63,11 @@ Get the latest builds from **[Reelhouse 1.0.0](https://github.com/Braedennn/Reel
 2. Open the installer and follow the setup steps.
 3. Launch **Reelhouse** from the Start menu or the installed shortcut.
 
-An internet connection is required for catalog metadata, artwork, source discovery, and playback.
+An internet connection is required for catalog metadata, artwork, source discovery, and playback. The Windows installer is currently unsigned, so Windows SmartScreen may display a publisher warning.
 
 ### Android TV
 
-1. Download `reelhouse-tv-debug.apk` onto your Android TV device or a computer connected to it.
+1. Download `reelhouse-tv.apk` onto your Android TV device or a computer connected to it.
 2. Allow installation from your chosen file manager or sideloading app when Android prompts you.
 3. Install the APK and open **Reelhouse** from the TV app row.
 
@@ -75,10 +75,10 @@ To install with ADB instead:
 
 ```sh
 adb connect YOUR_TV_IP:5555
-adb install reelhouse-tv-debug.apk
+adb install -r reelhouse-tv.apk
 ```
 
-The APK is debug-signed and intended for direct installation. It is not a Google Play release.
+The APK is built in release mode with Android debugging disabled and signed with the same development certificate used for v1.0.0. It is intended for direct installation and is not a Google Play or production-upload-signed release.
 
 ## Android TV
 
@@ -110,17 +110,18 @@ A full-screen, 10-foot interface with clear focus states, four-poster browsing r
 | Action | Control |
 | --- | --- |
 | Move focus | D-pad arrows |
+| Seek backward / forward 10 seconds | D-pad `←` / `→` during playback, including on the progress bar |
 | Select / play / pause | Enter or the remote’s select button |
 | Go back | Back |
 | Playback options | Open the on-screen playback settings control |
 
-## What’s new in 1.0.0
+## What’s new in 1.1.0
 
-- Four-poster Films and Shows browsing grids on Android TV
-- Automatic next-episode playback, including season transitions
-- Fullscreen preserved during automatic episode changes
-- Details-page **Play** and **Continue** actions advance to the correct episode
-- Native Android TV playback with remote-focused controls
+- More reliable Auto source selection with adaptive HLS and efficient fallbacks
+- StreamPlay’s Vidlink source added natively with quality variants and captions
+- Larger Android TV playback buffer and automatic English audio preference
+- Exact 10-second D-pad seeking on the video surface and focused progress bar
+- PlavioHD, StreamPlay · Vidlink, and Internet Archive support on Windows
 
 See the complete **[changelog](CHANGELOG.md)**.
 
